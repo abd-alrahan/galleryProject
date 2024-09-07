@@ -1,0 +1,51 @@
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    /* justify-content: top; */
+    height: 100vh;
+    background-size: cover;
+    background-image: url('assets/mainNature.jpg');  
+    /* background: linear-gradient(135deg, #6a11cb, #2575fc); */
+}
+
+#appBar{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: rgba(0, 128, 64, 0.95);
+    width: 300vh;
+    height: 65px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    text-align: center;
+}
+
+button{
+    /* margin-top: 17px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 550;
+    font-size: 1.7em; */
+
+    vertical-align: -0.1px;
+    font-size: 20px;
+    font-family: cursive;
+    font-weight: 550;
+    border-width: 0px;
+    border-radius: 10px;
+    background-color: transparent;
+    color: rgb(44, 41, 41);
+    width: 120px;
+    height: 55px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: blueviolet;
+}
+
+a {
+    font-size: 2em;
+    font-weight: 550;
+}
+
