@@ -1,0 +1,40 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+}
+
+#appBar {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: rgba(89, 107, 98, 0.95);
+    width: 100%;
+    height: 65px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    text-align: center;
+    position: fixed; /* Keeps the app bar fixed on top */
+    top: 0; /* Positions it at the top */
+    left: 0;
+    z-index: 1; 
+}
+
+button {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 550;
+    font-size: 1.7em;
+    border-width: 0;
+    border-radius: 10px;
+    background-color: transparent;
+    color: rgb(44, 41, 41);
+    width: 120px;
+    height: 55px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: blueviolet;
+}

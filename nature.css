@@ -1,0 +1,147 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    background-size: 10000px;
+}
+
+#appBar {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: rgba(89, 107, 98, 0.95);
+    width: 100%;
+    height: 65px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+button {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 550;
+    font-size: 1.7em;
+    border-width: 0;
+    border-radius: 10px;
+    background-color: transparent;
+    color: rgb(44, 41, 41);
+    width: 120px;
+    height: 55px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+button:hover {
+    background-color: blueviolet;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 20px;
+    margin-top: 85px;
+}
+
+.category {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.category img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.category-name {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Responsive Design - Media Queries */
+
+/* For screens that are less than 768px wide (like tablets) */
+@media screen and (max-width: 950px) {
+    .gallery {
+        grid-template-columns: repeat(3, 1fr); /* Display 2 columns instead of 3 */
+        gap: 15px;
+    }
+    
+    .category {
+        height: 180px;
+    }
+
+    button {
+        font-size: 1.4em;
+        width: 100px;
+        height: 45px;
+    }
+
+    .category-name {
+        font-size: 0.9em;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr); /* Display 2 columns instead of 3 */
+        gap: 10px;
+    }
+    
+    .category {
+        height: 150px;
+    }
+
+    button {
+        font-size: 1.2em;
+        width: 80px;
+        height: 40px;
+    }
+
+    .category-name {
+        font-size: 0.8em;
+    }
+}
+
+/* For screens that are less than 480px wide (like mobile phones) */
+@media screen and (max-width: 480px) {
+    .gallery {
+        grid-template-columns: 1fr; /* Display 1 column */
+        gap: 10px;
+    }
+
+    .category {
+        height: 150px;
+    }
+
+    button {
+        font-size: 1.2em;
+        width: 80px;
+        height: 40px;
+        margin-top: 15px;
+    }
+
+    .category-name {
+        font-size: 0.8em;
+    }
+}
