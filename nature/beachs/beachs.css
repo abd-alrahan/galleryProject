@@ -14,17 +14,27 @@ body {
     background-color: rgba(89, 107, 98, 0.95);
     width: 100%;
     height: 65px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    text-align: center;
     position: fixed;
     top: 0;
+    left: 0;
     z-index: 1;
 }
 
 button {
     font-family: 'Courier New', Courier, monospace;
+    font-weight: 550;
     font-size: 1.7em;
+    border-width: 0;
+    border-radius: 10px;
     background-color: transparent;
-    border: none;
+    color: rgb(44, 41, 41);
+    width: 120px;
+    height: 55px;
     cursor: pointer;
+    margin-top: 5px;
 }
 
 button:hover {
@@ -70,7 +80,7 @@ button:hover {
     position: fixed;
     right: -100%;
     top: 0;
-    width: 40%;
+    width: 25%;
     height: 100%;
     background-color: white;
     box-shadow: -2px 0 5px rgba(0,0,0,0.5);
@@ -83,15 +93,19 @@ button:hover {
 .sidePanel img {
     width: 100%;
     border-radius: 10px;
+    margin-top: 25px;
 }
 
 .close-btn {
-    font-size: 30px;
+    font-size: 40px;
     cursor: pointer;
     position: absolute;
-    top: 10px;
+    top: 0px;
     right: 20px;
+    color: linear-gradient(135deg, #6a11cb, #2575fc);
+    font-weight: 550;
     text-decoration: none;
+    z-index: 3;
 }
 
 /* Trigger panel to open when targeted */
@@ -99,18 +113,114 @@ button:hover {
     right: 0;
 }
 
-#panel1:target {
+#panel1:target,
+#panel2:target,
+#panel3:target,
+#panel4:target,
+#panel5:target,
+#panel6:target,
+#panel7:target,
+#panel8:target,
+#panel9:target,
+#panel10:target {
     right: 0;
-}
-
-#panel2:target {
-    right: 0;
+    left: unset;
 }
 
 /* Responsive Design */
+/*تصغيراسم الصورة*/
+@media screen and (max-width: 1030px) {
+    .gallery {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    button{
+        font-size: 1.5em;
+    }
+    .category-name{
+        font-size: 0.9em;
+    }
+}
+
+/*تصغير اسم الصورة*/
 @media screen and (max-width: 950px) {
     .gallery {
         grid-template-columns: repeat(3, 1fr);
+    }
+    button{
+        font-size: 1.5em;
+    }
+    .category-name{
+        font-size: 0.852em;
+    }
+}
+
+/*تكبير اللوحة الجانبية على حسب تصغير النافذة*/
+@media screen and (max-width: 920px){
+    .gallery {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    button{
+        font-size: 1.5em;
+    }
+    .category-name{
+        font-size: 0.852em;
+    }
+    .sidePanel{
+        width: 30%;
+    }
+    h2{
+        font-size: 1.4em;
+    }
+}
+
+/*تكبير اللوحة الجانبية على حسب تصغير النافذة*/
+@media screen and (max-width: 750px){
+    .gallery {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    button{
+        font-size: 1.5em;
+    }
+    .category-name{
+        font-size: 0.852em;
+    }
+    .sidePanel{
+        width: 35%;
+    }
+    h2{
+        font-size: 1.4em;
+    }
+}
+
+/*تكبير اللوحة الجانبية على حسب تصغير النافذة*/
+@media screen and (max-width: 650px){
+    .gallery {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    button{
+        font-size: 1.5em;
+    }
+    .category-name{
+        font-size: 0.852em;
+    }
+    .sidePanel{
+        width: 43.7%;
+    }
+    h2{
+        font-size: 1.39 em;
+    }
+}
+
+/*تصغير اسم الصورة*/
+@media screen and (max-width: 730px) {
+    .gallery {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    button{
+        font-size: 1.5em;
+    }
+    .category-name{
+        font-size: 0.804em;
     }
 }
 
@@ -118,10 +228,22 @@ button:hover {
     .gallery {
         grid-template-columns: repeat(2, 1fr);
     }
+    button{
+        font-size: 1.3em;
+    }
+    .category-name{
+        font-size: 0.8em;
+    }
 }
 
 @media screen and (max-width: 480px) {
     .gallery {
         grid-template-columns: 1fr;
+    }
+    button{
+        font-size: 1.1em;
+    }
+    .category-name{
+        font-size: 0.7em;
     }
 }
