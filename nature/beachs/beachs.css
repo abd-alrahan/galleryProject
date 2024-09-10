@@ -75,23 +75,30 @@ button:hover {
     font-family: 'Courier New', Courier, monospace;
 }
 
-/* Side Panel Styling */
+/* Center Panel Styling */
 .sidePanel {
     position: fixed;
-    right: -100%;
-    top: 0;
-    width: 25%;
-    height: 100%;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
     background-color: white;
-    box-shadow: -2px 0 5px rgba(0,0,0,0.5);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
     padding: 20px;
     z-index: 2;
     overflow-y: auto;
-    transition: right 2s ease; /* Smooth slide-in effect */
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.8s ease, opacity 0.8s ease;
+    max-width: 800px; /* Maximum width for larger screens */
+    max-height: 90%; /* Maximum height */
+    width: 45%; /* Adjust initial width */
+    height: 80%; /* Adjust initial height */
 }
 
 .sidePanel img {
     width: 100%;
+    height: 65.3%;
     border-radius: 10px;
     margin-top: 25px;
 }
@@ -102,29 +109,26 @@ button:hover {
     position: absolute;
     top: 0px;
     right: 20px;
-    color: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: black;
     font-weight: 550;
     text-decoration: none;
     z-index: 3;
 }
 
-/* Trigger panel to open when targeted */
+/* Trigger panel to open with grow effect when targeted */
 :target {
-    right: 0;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    width: 45%;
+    height: 80%;
+    max-width: 800px; /* Set a max width for larger screens */
+    max-height: 90%;
 }
 
-#panel1:target,
-#panel2:target,
-#panel3:target,
-#panel4:target,
-#panel5:target,
-#panel6:target,
-#panel7:target,
-#panel8:target,
-#panel9:target,
-#panel10:target {
-    right: 0;
-    left: unset;
+/* Reverse effect when closing the panel */
+.sidePanel:target:focus-within {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0);
 }
 
 /* Responsive Design */
@@ -138,6 +142,9 @@ button:hover {
     }
     .category-name{
         font-size: 0.9em;
+    }
+    .sidePanel {
+        width: 50%;
     }
 }
 
@@ -165,11 +172,11 @@ button:hover {
     .category-name{
         font-size: 0.852em;
     }
-    .sidePanel{
-        width: 30%;
-    }
     h2{
         font-size: 1.4em;
+    }
+    .sidePanel img {
+        height: 60%;
     }
 }
 
@@ -183,9 +190,6 @@ button:hover {
     }
     .category-name{
         font-size: 0.852em;
-    }
-    .sidePanel{
-        width: 35%;
     }
     h2{
         font-size: 1.4em;
@@ -203,11 +207,18 @@ button:hover {
     .category-name{
         font-size: 0.852em;
     }
-    .sidePanel{
-        width: 43.7%;
+    .sidePanel {
+        width: 55%;
     }
     h2{
         font-size: 1.39 em;
+    }
+}
+
+/*تصغير الصورة ضمن اللوحة*/
+@media screen and (max-width: 700px) {
+    .sidePanel img {
+        height: 56.5%;
     }
 }
 
@@ -234,6 +245,9 @@ button:hover {
     .category-name{
         font-size: 0.8em;
     }
+    .sidePanel img {
+        height: 55%;
+    }
 }
 
 @media screen and (max-width: 480px) {
@@ -245,5 +259,15 @@ button:hover {
     }
     .category-name{
         font-size: 0.7em;
+    }
+    .sidePanel {
+        width: 60%;
+    }
+}
+
+/*تصغير الصورة ضمن اللوحة*/
+@media screen and (max-width: 500px) {
+    .sidePanel img {
+        height: 50%;
     }
 }
