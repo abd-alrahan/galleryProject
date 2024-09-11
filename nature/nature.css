@@ -4,26 +4,29 @@ body {
     height: 100vh;
     background: linear-gradient(135deg, #d0b89a, #f5f5f5); /* Darker beige and light gray */
     background-size: 10000px;
-    background-position: center;
+    position: relative; /* Enable positioning for the logo */
 }
 
-/* Navigation Bar */
+/* Navigation Bar (Restored to previous style) */
 #appBar {
     display: flex;
     justify-content: space-evenly;
-    background-color:  rgba(176, 141, 87,0.5);
+    background-color: rgba(221, 166, 84, 0.95); /* Adjust transparency */
     width: 100%;
-    height: 65px;
+    height: 65px; /* This size is from your earlier request */
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
     text-align: center;
     padding: 10px;
+    position: fixed; /* Keep the navbar fixed at the top */
+    top: 0;
+    z-index: 4; /* Ensure the navbar is above the logo and images */
 }
 
 #appBar a button {
     font-family: 'Courier New', Courier, monospace;
     font-weight: 550;
-    font-size: 1.7em;
+    font-size: 1.7em; /* Same size as before */
     border-width: 0;
     border-radius: 10px;
     background-color: transparent;
@@ -31,18 +34,22 @@ body {
     width: 120px;
     height: 55px;
     cursor: pointer;
+    margin-top: -7px;
 }
 
 #appBar a button:hover {
     background-color: rgba(176, 141, 87, 0.2); /* Subtle gold hover effect */
 }
 
+/* Gallery */
 .gallery {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
     padding: 20px;
-    margin-top: 85px;
+    margin-top: 85px; /* To account for the fixed navbar */
+    position: relative;
+    z-index: 3; /* Ensure the images are above the logo */
 }
 
 .category {
@@ -58,6 +65,7 @@ body {
     height: 100%;
     object-fit: cover;
     border-radius: 10px;
+    opacity: 0.85;
 }
 
 .category-name {
@@ -65,7 +73,7 @@ body {
     bottom: 10px;
     right: 10px;
     background-color: rgba(0, 0, 0, 0.5);
-    color: #b08d57;
+    color: lightsalmon;
     padding: 5px 10px;
     border-radius: 5px;
     font-family: 'Courier New', Courier, monospace;
@@ -76,12 +84,29 @@ a {
     color: inherit;
 }
 
+/* Logo in the Center */
+#logoContainer {
+    position: fixed;
+    top: 50%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+    z-index: 1; /* Ensure the logo is behind the images */
+ 
+}
+
+#logoContainer img {
+    width: 120%; /* Adjust the size of the logo */
+}
+
+* {
+    box-sizing: border-box; /* Ensure padding and borders are included in element width/height */
+}
+
 /* Responsive Design - Media Queries */
 
-/* For screens that are less than 768px wide (like tablets) */
 @media screen and (max-width: 950px) {
     .gallery {
-        grid-template-columns: repeat(3, 1fr); /* Display 2 columns instead of 3 */
+        grid-template-columns: repeat(3, 1fr);
         gap: 15px;
     }
     
@@ -98,11 +123,15 @@ a {
     .category-name {
         font-size: 0.9em;
     }
+
+    #logoContainer img {
+        width: 60%;
+    }
 }
 
 @media screen and (max-width: 650px) {
     .gallery {
-        grid-template-columns: repeat(2, 1fr); /* Display 2 columns instead of 3 */
+        grid-template-columns: repeat(2, 1fr);
         gap: 10px;
     }
     
@@ -119,12 +148,15 @@ a {
     .category-name {
         font-size: 0.8em;
     }
+
+    #logoContainer img {
+        width: 70%;
+    }
 }
 
-/* For screens that are less than 480px wide (like mobile phones) */
 @media screen and (max-width: 480px) {
     .gallery {
-        grid-template-columns: 1fr; /* Display 1 column */
+        grid-template-columns: 1fr;
         gap: 10px;
     }
 
@@ -141,5 +173,9 @@ a {
 
     .category-name {
         font-size: 0.8em;
+    }
+
+    #logoContainer img {
+        width: 80%;
     }
 }

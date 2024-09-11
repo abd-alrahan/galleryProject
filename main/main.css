@@ -11,6 +11,7 @@ body {
     background-size: 100%;
     background: linear-gradient(135deg, #d0b89a, #f5f5f5); /* Darker beige and light gray */
     color: #b08d57; /* Gold-inspired color */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 /* Navigation Bar */
@@ -37,6 +38,7 @@ body {
     width: 120px;
     height: 55px;
     cursor: pointer;
+    margin-top: -7px;
 }
 
 #appBar a button:hover {
@@ -48,12 +50,13 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 50px;
+    margin-top: 20px;
 }
 
 #logoContainer img {
-    height: 100%;
+    height: auto;
     width: 20%; /* Adjust size according to preference */
+    max-width: 100%; /* Ensure the logo doesn't overflow */
 }
 
 /* Main Title */
@@ -65,6 +68,7 @@ body {
     text-align: center;
     color: #b08d57; /* Gold-inspired */
     font-family: 'Courier New', Courier, monospace;
+    margin-top: -50px;
 }
 
 h1 {
@@ -81,6 +85,7 @@ h1 {
     text-align: center;
     color: #b08d57;
     font-family: 'Courier New', Courier, monospace;
+    margin-top: -30px;
 }
 
 h2 {
@@ -88,6 +93,10 @@ h2 {
     font-weight: bold;
 }
 
+/* Prevent unintended horizontal scrolling */
+* {
+    box-sizing: border-box; /* Ensure padding and borders are included in element width/height */
+}
 
 
 
