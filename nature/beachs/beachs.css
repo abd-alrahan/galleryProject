@@ -28,7 +28,7 @@ body {
 button {
     font-family: 'Courier New', Courier, monospace;
     font-weight: 550;
-    font-size: 1.7em;
+    font-size: 1.4em;
     border-width: 0;
     border-radius: 10px;
     background-color: transparent;
@@ -79,6 +79,7 @@ button:hover {
     padding: 5px 10px;
     border-radius: 5px;
     font-family: 'Courier New', Courier, monospace;
+    font-size: 0.9em;
 }
 
 a {
@@ -89,15 +90,15 @@ a {
 /* Logo in the Center */
 #logoContainer {
     position: fixed;
-    top: 50%;
-    left: 45%;
+    top: 52%;
+    left: 52%;
     transform: translate(-50%, -50%);
     z-index: 1; /* Ensure the logo is behind the images */
  
 }
 
 #logoContainer img {
-    width: 120%; /* Adjust the size of the logo */
+    width: 90%; /* Adjust the size of the logo */
 }
 
 /* Center Panel Styling */
@@ -162,10 +163,13 @@ a {
         grid-template-columns: repeat(3, 1fr);
     }
     button {
-        font-size: 1.5em;
+        font-size: 1.3em;
     }
     .category-name {
-        font-size: 0.9em;
+        font-size: 0.85em;
+    }
+    #logoContainer img {
+        width: 95%;
     }
     .sidePanel {
         width: 50%;
@@ -177,10 +181,13 @@ a {
         grid-template-columns: repeat(3, 1fr);
     }
     button {
-        font-size: 1.5em;
+        font-size: 1.2em;
     }
     .category-name {
-        font-size: 0.85em;
+        font-size: 0.8em;
+    }
+    #logoContainer img {
+        width: 110%;
     }
 }
 
@@ -202,6 +209,17 @@ a {
     }
 }
 
+@media screen and (max-width: 800px) {
+
+    #logoContainer {
+        left: 48%;
+    }
+
+    #logoContainer img {
+        width: 110%;
+    }
+}
+
 @media screen and (max-width: 750px) {
     .gallery {
         grid-template-columns: repeat(3, 1fr);
@@ -210,7 +228,7 @@ a {
         font-size: 1.5em;
     }
     .category-name {
-        font-size: 0.85em;
+        font-size: 0.75em;
     }
     h2 {
         font-size: 1.4em;
@@ -222,10 +240,10 @@ a {
         grid-template-columns: repeat(2, 1fr);
     }
     button {
-        font-size: 1.3em;
+        font-size: 1.1em;
     }
     .category-name {
-        font-size: 0.8em;
+        font-size: 0.7em;
     }
     .sidePanel {
         width: 55%;
@@ -233,11 +251,25 @@ a {
     h2 {
         font-size: 1.3em;
     }
+    #logoContainer img {
+        width: 120%;
+    }
+
+    #logoContainer {
+        left: 45%;
+    }
 }
 
 @media screen and (max-width: 500px) {
     .sidePanel img {
         height: 50%;
+    }
+    #logoContainer {
+        left: 40%;
+    }
+
+    #logoContainer img {
+        width: 142%;
     }
 }
 
@@ -246,7 +278,7 @@ a {
         grid-template-columns: 1fr;
     }
     button {
-        font-size: 1.1em;
+        font-size: 0.8em;
     }
     .category-name {
         font-size: 0.7em;
