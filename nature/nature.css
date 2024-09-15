@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    height: 100vh;
+    height: 110vh;
     background: linear-gradient(135deg, #d0b89a, #f5f5f5); /* Darker beige and light gray */
     background-size: 10000px;
     position: relative; /* Enable positioning for the logo */
